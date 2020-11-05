@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class GooGooDan {
+public class MultiplicationTable {
 
     void gooGooScan() {
 
