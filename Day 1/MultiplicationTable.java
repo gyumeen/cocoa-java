@@ -1,37 +1,31 @@
+package net.honux;
 import java.util.Scanner;
-
 public class MultiplicationTable {
-
-    void gooGooScan() {
-
-        System.out.println("첫 단을 입력하세요.");
-        int startNumber = gooGooScanner.nextInt();
-
-        System.out.println("끝 단을 입력하세요");
-        int endNumber = gooGooScanner.nextInt();
-
+    private int start;
+    private int end;
+    public boolean getInputFromKeyboard() {
+        Scanner s = new Scanner(System.in);
+        System.out.println("시작단과 끝단을 입력해 주세요.(1-9)");
+        int start = s.nextInt();
+        int end = s.nextInt();
+        if (start < 1 || end > 9 || start > end) {
+            System.out.println("잘 좀 하라고! 선넘네!");
+            return false;
+        }
+        this.start = start;
+        this.end = end;
+        return true;
     }
-
     public static void main(String[] args) {
-
-        GooGooDan gooGooDan = new GooGooDan();
-        Scanner gooGooScanner = new Scanner(System.in);
-
-        int startNumber;
-
-
-        if (startNumber > 9 && endNumber > 9) {
-            System.out.println("9 이하의 수로 다시 입력해 주세요.");
-            gooGooDan.gooGooScan();
+        MultiplicationTable m = new MultiplicationTable();
+        boolean valid = m.getInputFromKeyboard();
+        while(!valid) {
+            valid = m.getInputFromKeyboard();
         }
-
-        for (int i = startNumber; i < endNumber + 1; i++) {
-            for (int j = 1; j < 10; j++) {
-                System.out.println(i + " x " + j + " = " + (i * j) );
-            }
-            System.out.println();
-        }
-
-        gooGooScanner.close();
+        m.printArgs();
+    }
+    private void printArgs() {
+        System.out.println(this.start);
+        System.out.println(this.end);
     }
 }
