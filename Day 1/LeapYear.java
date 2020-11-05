@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class YunYear {
+public class LeapYear {
 
     private final Scanner yoonScanner = new Scanner(System.in);
     private int year = (int) yoonScanner.nextDouble();
