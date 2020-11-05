@@ -15,7 +15,7 @@ public class MultiplicationTable {
         int end = s.nextInt();
         
         if (start < 1 || end > 9 || start > end) {
-            System.out.println("잘 좀 하라고! 선넘네!");
+            System.out.println("잘 좀 하라고! 선 넘네!");
             return false;
         }
         this.start = start;
